@@ -7,6 +7,8 @@ import java.nio.file.Paths;
 import org.apache.commons.io.FileUtils;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.index.IndexWriter;
+import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.highlight.SimpleHTMLFormatter;
 import org.apache.lucene.store.Directory;
@@ -72,6 +74,7 @@ public class ApplicationContext
         {
             LOG.info(CommonLogContent.DELETE_OBSOLETE_INDEX);
             FileUtils.deleteDirectory(indexPath);
+
         }
         Directory directory = FSDirectory.open(Paths.get(indexPath.getPath()));
         return directory;
@@ -90,5 +93,12 @@ public class ApplicationContext
     {
         SimpleHTMLFormatter htmlFormatter = new SimpleHTMLFormatter();
         return htmlFormatter;
+    }
+
+    @Autowired
+    @Bean(destroyMethod = "close")
+    public IndexWriter writer(Directory directory, Analyzer analyzer) throws IOException
+    {
+        return new IndexWriter(directory, new IndexWriterConfig(analyzer));
     }
 }
