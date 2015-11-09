@@ -1,18 +1,24 @@
 package ga.rugal.searchengine.core.service.impl;
 
+import config.SystemDefaultProperties;
+import ga.rugal.DBTestBase;
+import ga.rugal.searchengine.core.service.SearchService;
 import org.apache.lucene.search.TopDocs;
 import org.junit.After;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
  * @author Rugal Bernstein
  */
-public class SearchServiceImplTest
+public class SearchServiceImplTest extends DBTestBase
 {
+
+    @Autowired
+    private SearchService searchService;
 
     public SearchServiceImplTest()
     {
@@ -32,12 +38,12 @@ public class SearchServiceImplTest
     public void testSearch() throws Exception
     {
         System.out.println("search");
-        String[] keywords = null;
-        SearchServiceImpl instance = new SearchServiceImpl();
-        TopDocs expResult = null;
-        TopDocs result = instance.search(keywords);
-        assertEquals(expResult, result);
-        fail("The test case is a prototype.");
+        String[] keywords = new String[]
+        {
+            "web", "apache", "w3c"
+        };
+        TopDocs result = searchService.search(keywords);
+        Assert.assertEquals(SystemDefaultProperties.DEFAULT_HIT_NUMBER, result.scoreDocs.length);
     }
 
 }

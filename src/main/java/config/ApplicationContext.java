@@ -75,8 +75,9 @@ public class ApplicationContext
 
     @Autowired
     @Bean(destroyMethod = "close")
-    public Directory directory(File indexPath, Analyzer analyzer) throws IOException
+    public Directory directory(File indexPath, File originFolderPath, Analyzer analyzer) throws IOException
     {
+        LOG.info(CommonLogContent.OPEN_FOLDER, indexPath.getPath());
         if (indexPath.exists())
         {
             LOG.info(CommonLogContent.DELETE_OBSOLETE_INDEX);
@@ -86,7 +87,7 @@ public class ApplicationContext
         //Create index once directory initialized
         try (IndexWriter writer = new IndexWriter(directory, new IndexWriterConfig(analyzer)))
         {
-            this.createIndex(writer, indexPath);
+            this.createIndex(writer, originFolderPath);
         }
         return directory;
     }
@@ -132,7 +133,7 @@ public class ApplicationContext
      */
     private void createIndex(IndexWriter writer, File folderPath) throws IOException
     {
-        LOG.debug(CommonLogContent.START_INDEXING);
+        LOG.info(CommonLogContent.START_INDEXING);
         for (File file : folderPath.listFiles())
         {
             Document doc = new Document();
@@ -148,7 +149,7 @@ public class ApplicationContext
             writer.addDocument(doc);
             LOG.debug(CommonLogContent.FILE_INDEXED, file.getName());
         }
-        LOG.debug(CommonLogContent.INDEXING_SUCCEEDED);
+        LOG.info(CommonLogContent.INDEXING_SUCCEEDED);
     }
 
     /**

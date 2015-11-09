@@ -14,4 +14,6 @@ public interface CommonLogContent
     final String INDEXING_SUCCEEDED = "Index creation succeeded";
 
     final String DELETE_OBSOLETE_INDEX = "Deleting obsolete index";
+
+    final String OPEN_FOLDER = "Opening folder [{}]";
 }

@@ -25,7 +25,6 @@ import org.apache.lucene.search.highlight.TextFragment;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.jsoup.Jsoup;
-import org.junit.Test;
 
 /**
  *
@@ -46,7 +45,6 @@ public class LuceneTest
         return new String(encoded, "UTF-8");
     }
 
-    @Test
     public void createIndex() throws IOException
     {
         try (Directory directory = FSDirectory.open(Paths.get(INDEX)))
@@ -70,7 +68,6 @@ public class LuceneTest
         }
     }
 
-    @Test
     public void search() throws IOException, ParseException, InvalidTokenOffsetsException
     {
         try (Directory directory = FSDirectory.open(Paths.get(INDEX)))
@@ -102,7 +99,6 @@ public class LuceneTest
                         }
                     }
                 }
-
             }
         }
 
