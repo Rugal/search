@@ -9,7 +9,7 @@ package config;
 public interface SystemDefaultProperties
 {
 
-    final String ORIGIN_FOLDER_PATH = "../../dataset/W3C Web Pages/HTML";
+    final String ORIGIN_FOLDER_PATH = "data";
 
     final String INDEX_PATH = "index";
 
