@@ -3,6 +3,7 @@ package ga.rugal.searchengine.core.service.impl;
 import config.SystemDefaultProperties;
 import ga.rugal.DBTestBase;
 import ga.rugal.searchengine.core.service.SearchService;
+import org.apache.lucene.search.Query;
 import org.apache.lucene.search.TopDocs;
 import org.junit.After;
 import org.junit.Assert;
@@ -35,14 +36,15 @@ public class SearchServiceImplTest extends DBTestBase
     }
 
     @Test
-    public void testSearch() throws Exception
+    public void testCreateQueryAndSearch() throws Exception
     {
-        System.out.println("search");
+        System.out.println("createQuery");
         String[] keywords = new String[]
         {
             "web", "apache", "w3c"
         };
-        TopDocs result = searchService.search(keywords);
+        Query query = searchService.createQuery(keywords);
+        TopDocs result = searchService.search(query);
         Assert.assertEquals(SystemDefaultProperties.DEFAULT_HIT_NUMBER, result.scoreDocs.length);
     }
 

@@ -2,6 +2,7 @@ package ga.rugal.searchengine.core.service;
 
 import java.io.IOException;
 import org.apache.lucene.queryparser.classic.ParseException;
+import org.apache.lucene.search.Query;
 import org.apache.lucene.search.TopDocs;
 
 /**
@@ -14,13 +15,24 @@ public interface SearchService
     /**
      * Get top documents for given keywords.
      *
-     * @param keywords
+     * @param query
      *
      * @return
      *
      * @throws ParseException
      * @throws IOException
      */
-    TopDocs search(String[] keywords) throws ParseException, IOException;
+    TopDocs search(Query query) throws ParseException, IOException;
+
+    /**
+     * Create query object from an array of keyword
+     *
+     * @param keywords
+     *
+     * @return
+     *
+     * @throws ParseException
+     */
+    Query createQuery(String[] keywords) throws ParseException;
 
 }

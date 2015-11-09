@@ -8,6 +8,7 @@ import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.TopDocs;
+import org.apache.lucene.search.highlight.SimpleHTMLFormatter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,14 +31,16 @@ public class SearchServiceImpl implements SearchService
     @Autowired
     private QueryParser parser;
 
+    @Autowired
+    private SimpleHTMLFormatter htmlFormatter;
+
     /**
      * {@inheritDoc}
      *
      * @throws org.apache.lucene.queryparser.classic.ParseException
-     * @throws java.io.IOException
      */
     @Override
-    public TopDocs search(String[] keywords) throws ParseException, IOException
+    public Query createQuery(String[] keywords) throws ParseException
     {
         StringBuilder sb = new StringBuilder();
         for (String keyword : keywords)
@@ -46,7 +49,18 @@ public class SearchServiceImpl implements SearchService
         }
         LOG.debug(sb.toString());
         Query query = parser.parse(sb.toString());
-        return searcher.search(query, SystemDefaultProperties.DEFAULT_HIT_NUMBER);
+        return query;
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @throws org.apache.lucene.queryparser.classic.ParseException
+     * @throws java.io.IOException
+     */
+    @Override
+    public TopDocs search(Query query) throws ParseException, IOException
+    {
+        return searcher.search(query, SystemDefaultProperties.DEFAULT_HIT_NUMBER);
+    }
 }
