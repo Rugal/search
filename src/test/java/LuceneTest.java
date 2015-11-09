@@ -101,17 +101,6 @@ public class LuceneTest
                             System.out.println(frag1.toString());
                         }
                     }
-                    //Term vector
-//                    text = doc.get("content");
-//                    tokenStream = TokenSources.getAnyTokenStream(isearcher.getIndexReader(), hits[i].doc, "content", analyzer);
-//                    frag = highlighter.getBestTextFragments(tokenStream, text, false, 4);
-//                    for (TextFragment frag1 : frag)
-//                    {
-//                        if ((frag1 != null) && (frag1.getScore() > 0))
-//                        {
-//                            System.out.println(frag1.toString());
-//                        }
-//                    }
                 }
 
             }
