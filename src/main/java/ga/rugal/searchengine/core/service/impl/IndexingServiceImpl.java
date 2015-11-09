@@ -1,8 +1,8 @@
 package ga.rugal.searchengine.core.service.impl;
 
-import ga.rugal.searchengine.core.service.IndexingService;
 import config.SystemDefaultProperties;
 import ga.rugal.searchengine.common.CommonLogContent;
+import ga.rugal.searchengine.core.service.IndexingService;
 import java.io.File;
 import java.io.IOException;
 import org.apache.lucene.analysis.Analyzer;
