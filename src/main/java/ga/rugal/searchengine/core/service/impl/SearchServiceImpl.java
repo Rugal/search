@@ -8,7 +8,6 @@ import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.TopDocs;
-import org.apache.lucene.search.highlight.SimpleHTMLFormatter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,15 +30,13 @@ public class SearchServiceImpl implements SearchService
     @Autowired
     private QueryParser parser;
 
-    @Autowired
-    private SimpleHTMLFormatter htmlFormatter;
-
     /**
      * {@inheritDoc}
      *
      * @throws org.apache.lucene.queryparser.classic.ParseException
      */
     @Override
+
     public Query createQuery(String[] keywords) throws ParseException
     {
         StringBuilder sb = new StringBuilder();

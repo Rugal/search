@@ -21,6 +21,9 @@ public class SearchServiceImplTest extends DBTestBase
     @Autowired
     private SearchService searchService;
 
+    @Autowired
+    private String[] keywords;
+
     public SearchServiceImplTest()
     {
     }
@@ -39,10 +42,6 @@ public class SearchServiceImplTest extends DBTestBase
     public void testCreateQueryAndSearch() throws Exception
     {
         System.out.println("createQuery");
-        String[] keywords = new String[]
-        {
-            "web", "apache", "w3c"
-        };
         Query query = searchService.createQuery(keywords);
         TopDocs result = searchService.search(query);
         Assert.assertEquals(SystemDefaultProperties.DEFAULT_HIT_NUMBER, result.scoreDocs.length);
