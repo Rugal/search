@@ -3,6 +3,7 @@ package ga.rugal.searchengine.core.service.impl;
 import config.SystemDefaultProperties;
 import ga.rugal.DBTestBase;
 import ga.rugal.searchengine.core.service.SearchService;
+import javax.annotation.Resource;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.TopDocs;
 import org.junit.After;
@@ -21,7 +22,7 @@ public class SearchServiceImplTest extends DBTestBase
     @Autowired
     private SearchService searchService;
 
-    @Autowired
+    @Resource(name = "keywords")
     private String[] keywords;
 
     public SearchServiceImplTest()
