@@ -9,4 +9,6 @@ public interface CommonMessageContent
 
     final String EMPTY_QUERY = "Query is empty";
 
+    final String GET_RESULTS = "S   earch results";
+
 }

@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  *
@@ -30,6 +31,7 @@ public class SearchController
     private EncapsulationService encapsulationService;
 
     @RequestMapping
+    @ResponseBody
     public Message search(@RequestParam(value = "q", defaultValue = "") String q) throws ParseException, IOException, InvalidTokenOffsetsException
     {
         if (q.isEmpty())
@@ -42,11 +44,11 @@ public class SearchController
         try
         {
             List<SearchResult> results = encapsulationService.search(keywords);
-            message = Message.successMessage("GREAT", results);
+            message = Message.successMessage(CommonMessageContent.GET_RESULTS, results);
         }
         catch (ParseException | IOException e)
         {
-            LOG.error("Error while searching", e);
+            LOG.error(CommonLogContent.ERROR_SEARCH, e);
             throw e;
         }
         catch (InvalidTokenOffsetsException itoe)

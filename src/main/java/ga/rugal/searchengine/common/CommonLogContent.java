@@ -21,4 +21,6 @@ public interface CommonLogContent
 
     final String EMPTY_QUERY = "User fired empty query string";
 
+    final String ERROR_SEARCH = "Error while searching";
+
 }

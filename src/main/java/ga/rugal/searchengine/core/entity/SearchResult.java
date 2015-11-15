@@ -1,5 +1,7 @@
 package ga.rugal.searchengine.core.entity;
 
+import com.google.gson.annotations.Expose;
+
 /**
  *
  * @author Rugal Bernstein
@@ -7,8 +9,10 @@ package ga.rugal.searchengine.core.entity;
 public class SearchResult
 {
 
+    @Expose
     private final String path;
 
+    @Expose
     private final String fragment;
 
     public SearchResult(String path, String fragment)
