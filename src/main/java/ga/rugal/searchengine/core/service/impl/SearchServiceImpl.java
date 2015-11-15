@@ -36,7 +36,6 @@ public class SearchServiceImpl implements SearchService
      * @throws org.apache.lucene.queryparser.classic.ParseException
      */
     @Override
-
     public Query createQuery(String[] keywords) throws ParseException
     {
         StringBuilder sb = new StringBuilder();

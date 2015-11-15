@@ -19,7 +19,7 @@ public interface SystemDefaultProperties
 
     final String ENCODING = "UTF-8";
 
-    final int DEFAULT_HIT_NUMBER = 10;
+    final int DEFAULT_HIT_NUMBER = 6;
 
     final int DEFAULT_MAX_FRAGMENTS = 3;
 }

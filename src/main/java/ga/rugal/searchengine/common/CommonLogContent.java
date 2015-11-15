@@ -17,5 +17,8 @@ public interface CommonLogContent
 
     final String OPEN_FOLDER = "Opening folder [{}]";
 
-    final String HIGHLIGHTING = "Highlighting document [{}]";
+    final String HIGHLIGHTING = "Highlighting document [{}], scored [{}]";
+
+    final String EMPTY_QUERY = "User fired empty query string";
+
 }

@@ -46,7 +46,7 @@ public class HighlightServiceImpl implements HighlightService
     {
         //The document from searcher
         Document doc = searcher.doc(docs.doc);
-        LOG.debug(CommonLogContent.HIGHLIGHTING, doc.getField(SystemDefaultProperties.DEFAULT_PATH_NAME));
+        LOG.debug(CommonLogContent.HIGHLIGHTING, doc.getField(SystemDefaultProperties.DEFAULT_PATH_NAME), docs.score);
         //the target content field
         String text = doc.get(SystemDefaultProperties.DEFAULT_CONTENT_NAME);
         //tokenize target content
@@ -64,6 +64,7 @@ public class HighlightServiceImpl implements HighlightService
     @Override
     public List<String> highlightAll(ScoreDoc[] docs, Highlighter highlighter) throws IOException, InvalidTokenOffsetsException
     {
+
         List<String> list = new ArrayList(docs.length);
         for (ScoreDoc doc : docs)
         {

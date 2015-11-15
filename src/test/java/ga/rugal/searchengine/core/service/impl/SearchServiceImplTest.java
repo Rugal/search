@@ -44,6 +44,7 @@ public class SearchServiceImplTest extends DBTestBase
     {
         System.out.println("createQuery");
         Query query = searchService.createQuery(keywords);
+        System.out.println("search");
         TopDocs result = searchService.search(query);
         Assert.assertEquals(SystemDefaultProperties.DEFAULT_HIT_NUMBER, result.scoreDocs.length);
     }
