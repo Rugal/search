@@ -1,8 +1,8 @@
-package ga.rugal.searchengine.core.service.impl;
+package ga.rugal.searchengine.core.dao.impl;
 
 import config.SystemDefaultProperties;
 import ga.rugal.DBTestBase;
-import ga.rugal.searchengine.core.service.SearchService;
+import ga.rugal.searchengine.core.dao.SearchDAO;
 import javax.annotation.Resource;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.TopDocs;
@@ -20,7 +20,7 @@ public class SearchServiceImplTest extends DBTestBase
 {
 
     @Autowired
-    private SearchService searchService;
+    private SearchDAO searchService;
 
     @Resource(name = "keywords")
     private String[] keywords;

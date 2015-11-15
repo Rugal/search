@@ -42,7 +42,7 @@ import org.springframework.util.FileCopyUtils;
     {
         "classpath:search.properties"
     })
-@ComponentScan(basePackageClasses = ga.rugal.searchengine.core.service.PackageInfo.class)
+@ComponentScan(basePackageClasses = ga.rugal.searchengine.core.PackageInfo.class)
 public class ApplicationContext
 {
 

@@ -1,8 +1,8 @@
-package ga.rugal.searchengine.core.service.impl;
+package ga.rugal.searchengine.core.dao.impl;
 
 import config.SystemDefaultProperties;
 import ga.rugal.searchengine.common.CommonLogContent;
-import ga.rugal.searchengine.core.service.HighlightService;
+import ga.rugal.searchengine.core.dao.HighlightDAO;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,18 +16,18 @@ import org.apache.lucene.search.highlight.InvalidTokenOffsetsException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
 /**
  * Do search job.
  *
  * @author Rugal Bernstein
  */
-@Service
-public class HighlightServiceImpl implements HighlightService
+@Repository
+public class HighlightDAOImpl implements HighlightDAO
 {
 
-    private static final Logger LOG = LoggerFactory.getLogger(HighlightServiceImpl.class.getName());
+    private static final Logger LOG = LoggerFactory.getLogger(HighlightDAOImpl.class.getName());
 
     @Autowired
     private IndexSearcher searcher;
@@ -46,7 +46,9 @@ public class HighlightServiceImpl implements HighlightService
     {
         //The document from searcher
         Document doc = searcher.doc(docs.doc);
-        LOG.debug(CommonLogContent.HIGHLIGHTING, doc.getField(SystemDefaultProperties.DEFAULT_PATH_NAME), docs.score);
+        LOG.debug(CommonLogContent.HIGHLIGHTING,
+                  doc.getField(SystemDefaultProperties.DEFAULT_PATH_NAME).stringValue(),
+                  docs.score);
         //the target content field
         String text = doc.get(SystemDefaultProperties.DEFAULT_CONTENT_NAME);
         //tokenize target content

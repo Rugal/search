@@ -1,4 +1,4 @@
-package ga.rugal.searchengine.core.service;
+package ga.rugal.searchengine.core.dao;
 
 import java.io.IOException;
 import org.apache.lucene.queryparser.classic.ParseException;
@@ -9,7 +9,7 @@ import org.apache.lucene.search.TopDocs;
  *
  * @author Rugal Bernstein
  */
-public interface SearchService
+public interface SearchDAO
 {
 
     /**

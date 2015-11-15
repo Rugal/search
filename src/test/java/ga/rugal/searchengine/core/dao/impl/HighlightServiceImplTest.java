@@ -1,8 +1,8 @@
-package ga.rugal.searchengine.core.service.impl;
+package ga.rugal.searchengine.core.dao.impl;
 
 import ga.rugal.DBTestBase;
-import ga.rugal.searchengine.core.service.HighlightService;
-import ga.rugal.searchengine.core.service.SearchService;
+import ga.rugal.searchengine.core.dao.HighlightDAO;
+import ga.rugal.searchengine.core.dao.SearchDAO;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Resource;
@@ -26,10 +26,10 @@ public class HighlightServiceImplTest extends DBTestBase
 {
 
     @Autowired
-    private HighlightService highlightService;
+    private HighlightDAO highlightService;
 
     @Autowired
-    private SearchService searchService;
+    private SearchDAO searchService;
 
     @Resource(name = "keywords")
     private String[] keywords;

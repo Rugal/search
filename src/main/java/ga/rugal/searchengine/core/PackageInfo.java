@@ -1,4 +1,4 @@
-package ga.rugal.searchengine.core.service;
+package ga.rugal.searchengine.core;
 
 /**
  *

@@ -1,7 +1,7 @@
-package ga.rugal.searchengine.core.service.impl;
+package ga.rugal.searchengine.core.dao.impl;
 
 import config.SystemDefaultProperties;
-import ga.rugal.searchengine.core.service.SearchService;
+import ga.rugal.searchengine.core.dao.SearchDAO;
 import java.io.IOException;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
@@ -11,18 +11,18 @@ import org.apache.lucene.search.TopDocs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
 /**
  * Do search job.
  *
  * @author Rugal Bernstein
  */
-@Service
-public class SearchServiceImpl implements SearchService
+@Repository
+public class SearchDAOImpl implements SearchDAO
 {
 
-    private static final Logger LOG = LoggerFactory.getLogger(SearchServiceImpl.class.getName());
+    private static final Logger LOG = LoggerFactory.getLogger(SearchDAOImpl.class.getName());
 
     @Autowired
     private IndexSearcher searcher;

@@ -1,4 +1,4 @@
-package ga.rugal.searchengine.core.service;
+package ga.rugal.searchengine.core.dao;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,7 +10,7 @@ import org.apache.lucene.search.highlight.InvalidTokenOffsetsException;
  *
  * @author Rugal Bernstein
  */
-public interface HighlightService
+public interface HighlightDAO
 {
 
     /**
