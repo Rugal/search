@@ -13,6 +13,8 @@ public interface SystemDefaultProperties
 
     final String INDEX_PATH = "index";
 
+    final String DICTIONARY_PATH = "dict";
+
     final String DEFAULT_CONTENT_NAME = "content";
 
     final String DEFAULT_PATH_NAME = "path";

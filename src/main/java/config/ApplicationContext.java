@@ -1,9 +1,13 @@
 package config;
 
 import ga.rugal.searchengine.common.CommonLogContent;
+import ga.rugal.trie.Trie;
+import ga.rugal.trie.TrieImpl;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.Scanner;
 import org.apache.commons.io.FileUtils;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
@@ -52,6 +56,8 @@ public class ApplicationContext
 
     private static final String ORIGIN_FOLDER_PATH_NAME = "origin.path";
 
+    private static final String DICTIONARY_PATH = "dictionary.path";
+
     @Autowired
     private Environment env;
 
@@ -62,15 +68,36 @@ public class ApplicationContext
     }
 
     @Bean
-    public File originFolderPath()
+    public File originFolderPath() throws IOException
     {
-        return new File(env.getProperty(ORIGIN_FOLDER_PATH_NAME, SystemDefaultProperties.ORIGIN_FOLDER_PATH));
+        File file = new File(env.getProperty(ORIGIN_FOLDER_PATH_NAME, SystemDefaultProperties.ORIGIN_FOLDER_PATH));
+        if ((!file.exists() || !file.canExecute()) || !file.canRead())
+        {
+            throw new IOException(String.format(CommonLogContent.NO_FILE_FOUND, file.getPath()));
+        }
+        return file;
     }
 
     @Bean
-    public File indexPath()
+    public File dictionaryPath() throws IOException
     {
-        return new File(env.getProperty(INDEX_PATH_NAME, SystemDefaultProperties.INDEX_PATH));
+        File file = new File(env.getProperty(DICTIONARY_PATH, SystemDefaultProperties.DICTIONARY_PATH));
+        if ((!file.exists() || !file.canExecute()) || !file.canRead())
+        {
+            throw new IOException(String.format(CommonLogContent.NO_FILE_FOUND, file.getPath()));
+        }
+        return file;
+    }
+
+    @Bean
+    public File indexPath() throws IOException
+    {
+        File file = new File(env.getProperty(INDEX_PATH_NAME, SystemDefaultProperties.INDEX_PATH));
+        if ((!file.exists() || !file.canExecute()) || !file.canRead() || !file.canWrite())
+        {
+            throw new IOException(String.format(CommonLogContent.NO_FILE_FOUND, file.getPath()));
+        }
+        return file;
     }
 
     @Autowired
@@ -165,5 +192,30 @@ public class ApplicationContext
     {
         byte[] encoded = FileCopyUtils.copyToByteArray(file);
         return new String(encoded, SystemDefaultProperties.ENCODING);
+    }
+
+    @Autowired
+    @Bean
+    public Trie trie(File dictionaryPath)
+    {
+        Trie t = new TrieImpl(false);
+        LOG.info(CommonLogContent.BUILD_TRIE);
+        for (File file : dictionaryPath.listFiles())
+        {
+            LOG.debug(CommonLogContent.ADD_DICTIONARY, file.getPath());
+            try (Scanner scanner = new Scanner(file))
+            {
+                while (scanner.hasNext())
+                {
+                    String next = scanner.next();
+                    t.insert(next);
+                }
+            }
+            catch (FileNotFoundException ex)
+            {//not possible
+            }
+        }
+        LOG.info(CommonLogContent.SIZE_OF_TRIE, t.size());
+        return t;
     }
 }
