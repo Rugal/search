@@ -24,4 +24,6 @@ public interface SystemDefaultProperties
     final int DEFAULT_HIT_NUMBER = 6;
 
     final int DEFAULT_MAX_FRAGMENTS = 3;
+
+    final int DEFAULT_MAX_WAIT_TIME = 1000;
 }
