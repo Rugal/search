@@ -8,7 +8,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.Scanner;
-import org.apache.commons.io.FileUtils;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
@@ -101,17 +100,17 @@ public class ApplicationContext
     public Directory directory(File indexPath, File originFolderPath, Analyzer analyzer) throws IOException
     {
         LOG.info(CommonLogContent.OPEN_FOLDER, indexPath.getPath());
-        if (indexPath.exists())
-        {
-            LOG.info(CommonLogContent.DELETE_OBSOLETE_INDEX);
-            FileUtils.deleteDirectory(indexPath);
-        }
         Directory directory = FSDirectory.open(Paths.get(indexPath.getPath()));
-        //Create index once directory initialized
-        try (IndexWriter writer = new IndexWriter(directory, new IndexWriterConfig(analyzer)))
+        if (!indexPath.exists() || indexPath.listFiles().length == 0)
         {
-            this.createIndex(writer, originFolderPath);
+            //Create index once directory initialized
+            try (IndexWriter writer = new IndexWriter(directory, new IndexWriterConfig(analyzer)))
+            {
+                this.createIndex(writer, originFolderPath);
+            }
+//            FileUtils.deleteDirectory(indexPath);
         }
+
         return directory;
     }
 

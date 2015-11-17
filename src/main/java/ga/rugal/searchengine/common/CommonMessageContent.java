@@ -11,4 +11,8 @@ public interface CommonMessageContent
 
     final String GET_RESULTS = "Search results";
 
+    final String CORRECTED_WITH = "Correct with [%s]";
+
+    final String NOTHING_MATCHED = "No content matched";
+
 }

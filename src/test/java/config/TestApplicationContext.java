@@ -29,4 +29,10 @@ public class TestApplicationContext
         return keywords;
     }
 
+    @Bean
+    public String wrongSpellingKeywords()
+    {
+        String keywords = "introductian servace string Standirds";
+        return keywords;
+    }
 }
