@@ -35,4 +35,6 @@ public interface CommonLogContent
 
     final String SIZE_OF_TRIE = "The size of trie is [{}]";
 
+    final String CORRECT_WORD = "Correct [{}] with [{}]";
+
 }

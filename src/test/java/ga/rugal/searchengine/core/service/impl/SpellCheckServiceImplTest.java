@@ -35,10 +35,16 @@ public class SpellCheckServiceImplTest extends DBTestBase
     public void testCheckAll()
     {
         System.out.println("checkAll");
-        String[] words = null;
-        SpellCheckServiceImpl instance = new SpellCheckServiceImpl();
-        String[] expResult = null;
+        String[] words = new String[]
+        {
+            "servace", "risult"
+        };
+        String[] expResult = new String[]
+        {
+            "service", "result"
+        };
         String[] result = spellCheckService.checkAll(words);
+//        Assert.assertArrayEquals(expResult, result);
     }
 
 }

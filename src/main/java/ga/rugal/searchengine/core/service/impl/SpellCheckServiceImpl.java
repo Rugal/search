@@ -1,7 +1,8 @@
 package ga.rugal.searchengine.core.service.impl;
 
-import ga.rugal.searchengine.core.service.SpellCheckService;
 import config.SystemDefaultProperties;
+import ga.rugal.searchengine.common.CommonLogContent;
+import ga.rugal.searchengine.core.service.SpellCheckService;
 import ga.rugal.trie.Trie;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +29,7 @@ public class SpellCheckServiceImpl implements SpellCheckService
         if (!trie.contains(word))
         {
             corrected = trie.bestMatch(word, SystemDefaultProperties.DEFAULT_MAX_WAIT_TIME);
+            LOG.debug(CommonLogContent.CORRECT_WORD, word, corrected);
         }
         return corrected;
     }
