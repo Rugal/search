@@ -25,5 +25,5 @@ public interface SystemDefaultProperties
 
     final int DEFAULT_MAX_FRAGMENTS = 3;
 
-    final int DEFAULT_MAX_WAIT_TIME = 5000;
+    final int DEFAULT_MAX_WAIT_TIME = 50000;
 }

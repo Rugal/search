@@ -3,6 +3,7 @@ package ga.rugal.searchengine.core.service.impl;
 import ga.rugal.DBTestBase;
 import ga.rugal.searchengine.core.service.SpellCheckService;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,14 +38,14 @@ public class SpellCheckServiceImplTest extends DBTestBase
         System.out.println("checkAll");
         String[] words = new String[]
         {
-            "servace", "risult"
+            "servace", "impliment"
         };
         String[] expResult = new String[]
         {
-            "service", "result"
+            "service", "implement"
         };
         String[] result = spellCheckService.checkAll(words);
-//        Assert.assertArrayEquals(expResult, result);
+        Assert.assertArrayEquals(expResult, result);
     }
 
 }
