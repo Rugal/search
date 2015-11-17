@@ -93,10 +93,6 @@ public class ApplicationContext
     public File indexPath() throws IOException
     {
         File file = new File(env.getProperty(INDEX_PATH_NAME, SystemDefaultProperties.INDEX_PATH));
-        if ((!file.exists() || !file.canExecute()) || !file.canRead() || !file.canWrite())
-        {
-            throw new IOException(String.format(CommonLogContent.NO_FILE_FOUND, file.getPath()));
-        }
         return file;
     }
 
