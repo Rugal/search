@@ -38,7 +38,7 @@ public class SearchControllerTest extends ControllerClientSideTestBase
     public void testNormalSearch() throws Exception
     {
         System.out.println("search");
-        this.mockMvc.perform(get("/")
+        this.mockMvc.perform(get("/search")
             .param("q", keywords)
             .accept(MediaType.APPLICATION_JSON_VALUE))
             .andDo(print())
@@ -49,7 +49,7 @@ public class SearchControllerTest extends ControllerClientSideTestBase
     public void testSearchNothing() throws Exception
     {
         System.out.println("search");
-        this.mockMvc.perform(get("/")
+        this.mockMvc.perform(get("/search")
             .param("q", "introductian")
             .param("c", "false")
             .accept(MediaType.APPLICATION_JSON_VALUE))
@@ -61,7 +61,7 @@ public class SearchControllerTest extends ControllerClientSideTestBase
     public void testNoQuerySearch() throws Exception
     {
         System.out.println("search");
-        this.mockMvc.perform(get("/")
+        this.mockMvc.perform(get("/search")
             .param("q", "")
             .accept(MediaType.APPLICATION_JSON_VALUE))
             .andDo(print())
