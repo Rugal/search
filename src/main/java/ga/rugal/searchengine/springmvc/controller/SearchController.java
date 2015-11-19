@@ -51,11 +51,7 @@ public class SearchController
      * @throws InvalidTokenOffsetsException
      */
     @RequestMapping(value = "/",
-                    method = RequestMethod.GET,
-                    params =
-                    {
-                        ""
-                    }
+                    method = RequestMethod.GET
     )
     @ResponseBody
     public ModelAndView index()
