@@ -9,7 +9,7 @@ public interface CommonMessageContent
 
     final String EMPTY_QUERY = "Query is empty";
 
-    final String GET_RESULTS = "Search results";
+    final String GET_RESULTS = "Search results for [%s]";
 
     final String CORRECTED_WITH = "Correct with [%s]";
 

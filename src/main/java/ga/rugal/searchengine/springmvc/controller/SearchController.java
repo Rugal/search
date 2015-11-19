@@ -98,17 +98,13 @@ public class SearchController
         Message message;
         try
         {
-            String me = CommonMessageContent.GET_RESULTS;
+            String printString = this.catString(keywords);
+            String me = String.format(CommonMessageContent.GET_RESULTS, printString);
             if (correctable)
             {//If correction allowed
                 keywords = spellCheckService.checkAll(keywords);
-                StringBuilder sb = new StringBuilder();
-                for (String keyword : keywords)
-                {
-                    sb.append(keyword).append(" ");
-                }
                 //also indicate that this search has been corrected
-                me = String.format(CommonMessageContent.CORRECTED_WITH, sb.toString());
+                me = String.format(CommonMessageContent.CORRECTED_WITH, printString);
             }
             List<SearchResult> results = encapsulationService.search(keywords);
             //what if no matched result?
@@ -130,5 +126,22 @@ public class SearchController
             throw itoe;
         }
         return message;
+    }
+
+    /**
+     * Simply concatenate string array into a string.
+     *
+     * @param keywords
+     *
+     * @return
+     */
+    private String catString(String[] keywords)
+    {
+        StringBuilder sb = new StringBuilder();
+        for (String keyword : keywords)
+        {
+            sb.append(keyword).append(" ");
+        }
+        return sb.toString();
     }
 }
