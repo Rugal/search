@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  *
@@ -49,10 +50,47 @@ public class SearchController
      * @throws IOException
      * @throws InvalidTokenOffsetsException
      */
-    @RequestMapping(value = "search", method = RequestMethod.GET)
+    @RequestMapping(value = "/",
+                    method = RequestMethod.GET,
+                    params =
+                    {
+                        ""
+                    }
+    )
     @ResponseBody
-    public Message search(@RequestParam(value = "q", defaultValue = "", required = true) String queryString,
-                          @RequestParam(value = "c", defaultValue = "true", required = false) boolean correctable)
+    public ModelAndView index()
+    {
+        return new ModelAndView("/page/index.html");
+    }
+
+    /**
+     * Search pages for given key words.
+     *
+     * @param queryString a list of key word.
+     * @param correctable indicate if current query is correctable. true means keywords will be
+     *                    corrected by spell checker if spelling wrongly; otherwise, to force search
+     *                    the given keywords even they are incorrect in spelling.
+     *
+     * @return A Message object that contains serialized content of query result.
+     *
+     * @throws ParseException
+     * @throws IOException
+     * @throws InvalidTokenOffsetsException
+     */
+    @RequestMapping(value = "/",
+                    method = RequestMethod.GET,
+                    params =
+                    {
+                        "q"
+                    }
+    )
+    @ResponseBody
+    public Message search(@RequestParam(value = "q",
+                                        defaultValue = "",
+                                        required = true) String queryString,
+                          @RequestParam(value = "c",
+                                        defaultValue = "true",
+                                        required = false) boolean correctable)
         throws ParseException, IOException, InvalidTokenOffsetsException
     {
         if (queryString.isEmpty())
