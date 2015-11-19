@@ -49,7 +49,7 @@ public class SearchController
      * @throws IOException
      * @throws InvalidTokenOffsetsException
      */
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "search", method = RequestMethod.GET)
     @ResponseBody
     public Message search(@RequestParam(value = "q", defaultValue = "", required = true) String queryString,
                           @RequestParam(value = "c", defaultValue = "true", required = false) boolean correctable)
