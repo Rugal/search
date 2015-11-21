@@ -1,11 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="SearchApp">
     <head>
-        <title>TODO supply a title</title>
+        <title>Rugal Search</title>
         <meta charset="UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="/page/assets/img/favicon.ico">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     </head>
-    <body>
-        <div>TODO write content</div>
+    <body ng-controller="SearchController as searchCtrl">
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>JPT first released</h2>
+                    <p>{{searchCtrl.responsebody.data.user.username}}</p>
+                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Travis passed</h2>
+                    <p>{{searchCtrl.responsebody.data.user.password}}</p>
+                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Last one</h2>
+                    <p>{{searchCtrl.responsebody.data.user.email}}</p>
+                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                </div>
+            </div>
+            <hr>
+
+            <footer>
+
+                <p>&copy; Rugal Bernstein 2015</p>
+            </footer>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="/page/assets/js/app.js"></script>
     </body>
 </html>
