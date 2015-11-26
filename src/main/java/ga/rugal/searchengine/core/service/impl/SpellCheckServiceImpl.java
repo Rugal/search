@@ -44,9 +44,15 @@ public class SpellCheckServiceImpl implements SpellCheckService
             String c = check(words[i]);
             if (null != c)
             {
+                //if correction needed, put the new word
                 anyCorrected = true;
+                corrected[i] = c;
             }
-            corrected[i] = c;
+            else
+            {
+                //otherwise, still the same to avoid NPE
+                corrected[i] = words[i];
+            }
         }
         if (anyCorrected)
         {
