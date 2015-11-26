@@ -99,21 +99,27 @@ public class SearchController
         try
         {
             String printString = this.catString(keywords);
-            String me = String.format(CommonMessageContent.GET_RESULTS, printString);
+            String messageText = String.format(CommonMessageContent.GET_RESULTS, printString);
+            //If correction allowed
             if (correctable)
-            {//If correction allowed
-                keywords = spellCheckService.checkAll(keywords);
-                //also indicate that this search has been corrected
-                me = String.format(CommonMessageContent.CORRECTED_WITH, printString);
+            {
+                //if correct needed
+                String[] correctedKeywords = spellCheckService.checkAll(keywords);
+                if (null != correctedKeywords)
+                {
+                    keywords = correctedKeywords;
+                    //also indicate this search has been corrected
+                    messageText = String.format(CommonMessageContent.CORRECTED_WITH, this.catString(keywords));
+                }
             }
             List<SearchResult> results = encapsulationService.search(keywords);
             //what if no matched result?
             if (results.isEmpty())
             {
-                me = CommonMessageContent.NOTHING_MATCHED;
+                messageText = CommonMessageContent.NOTHING_MATCHED;
                 results = null;
             }
-            message = Message.successMessage(me, results);
+            message = Message.successMessage(messageText, results);
         }
         catch (ParseException | IOException e)
         {

@@ -13,7 +13,8 @@ public interface SpellCheckService
      *
      * @param word
      *
-     * @return the origin word if it is in dictionary; otherwise, give a corrected word.
+     * @return the origin word if it is in dictionary; otherwise, give a corrected word. Return null
+     *         means no correction needed.
      */
     String check(String word);
 
@@ -22,7 +23,8 @@ public interface SpellCheckService
      *
      * @param words
      *
-     * @return An array of words that have been either corrected or kept.
+     * @return An array of words that have been either corrected or kept. Return null mean no
+     *         correction needed.
      */
     String[] checkAll(String[] words);
 

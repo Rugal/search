@@ -25,7 +25,7 @@ public class SpellCheckServiceImpl implements SpellCheckService
     @Override
     public String check(String word)
     {
-        String corrected = word;
+        String corrected = null;
         if (!trie.contains(word))
         {
             corrected = trie.bestMatch(word, SystemDefaultProperties.DEFAULT_MAX_WAIT_TIME);
@@ -38,11 +38,25 @@ public class SpellCheckServiceImpl implements SpellCheckService
     public String[] checkAll(String[] words)
     {
         String[] corrected = new String[words.length];
+        boolean anyCorrected = false;
         for (int i = 0; i < words.length; i++)
         {
-            corrected[i] = check(words[i]);
+            String c = check(words[i]);
+            if (null != c)
+            {
+                anyCorrected = true;
+            }
+            corrected[i] = c;
         }
-        return corrected;
+        if (anyCorrected)
+        {
+            return corrected;
+        }
+        else
+        {
+            return null;
+        }
+
     }
 
 }
