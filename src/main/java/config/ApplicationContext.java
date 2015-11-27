@@ -141,7 +141,7 @@ public class ApplicationContext
     @Bean
     public SimpleHTMLFormatter htmlFormatter()
     {
-        SimpleHTMLFormatter htmlFormatter = new SimpleHTMLFormatter();
+        SimpleHTMLFormatter htmlFormatter = new SimpleHTMLFormatter("<b class=\"highlight\">", "</b>");
         return htmlFormatter;
     }
 

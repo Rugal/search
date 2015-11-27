@@ -1,10 +1,10 @@
 package ga.rugal.searchengine.core.service.impl;
 
 import config.SystemDefaultProperties;
-import ga.rugal.searchengine.core.entity.SearchResult;
-import ga.rugal.searchengine.core.service.EncapsulationService;
 import ga.rugal.searchengine.core.dao.HighlightDAO;
 import ga.rugal.searchengine.core.dao.SearchDAO;
+import ga.rugal.searchengine.core.entity.SearchResult;
+import ga.rugal.searchengine.core.service.EncapsulationService;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
