@@ -27,9 +27,9 @@ Editors:
         Chris Ferris (until March 2003), IBM
         David Orchard (until March 2003), BEA Systems
 
-This document is also available in these non-normative formats: PostScript version and PDF version.
+This document is also available in these non-normative formats: PostScript version and?PDF version.
 
-Copyright © 2004 W3C® (MIT, ERCIM, Keio), All Rights Reserved. W3C liability, trademark, document use and software licensing rules apply.
+Copyright???2004?W3C? (MIT, ERCIM, Keio), All Rights Reserved. W3C liability, trademark, document use and software licensing rules apply.
 
 
 ========================================================================================================================================================================================================
@@ -68,159 +68,159 @@ Table of Contents
 
 
 1 Introduction
-    1.1 Purpose of the Web Service Architecture
-    1.2 Intended Audience
-    1.3 Document Organization
-    1.4 What is a Web service?
-        1.4.1 Agents and Services
-        1.4.2 Requesters and Providers
-        1.4.3 Service Description
-        1.4.4 Semantics
-        1.4.5 Overview of Engaging a Web Service
-    1.5 Related Documents
+1.1 Purpose of the Web Service Architecture
+1.2 Intended Audience
+1.3 Document Organization
+1.4 What is a Web service?
+1.4.1 Agents and Services
+1.4.2 Requesters and Providers
+1.4.3 Service Description
+1.4.4 Semantics
+1.4.5 Overview of Engaging a Web Service
+1.5 Related Documents
 2 Concepts and Relationships
-    2.1 Introduction
-    2.2 How to read this section
-        2.2.1 Concepts
-        2.2.2 Relationships
-        2.2.3 Concept Maps
-        2.2.4 Model
-        2.2.5 Conformance
-    2.3 The Architectural Models
-        2.3.1 Message Oriented Model
-            2.3.1.1 Address
-            2.3.1.2 Delivery Policy
-            2.3.1.3 Message
-            2.3.1.4 Message Body
-            2.3.1.5 Message Correlation
-            2.3.1.6 Message Envelope
-            2.3.1.7 Message Exchange Pattern (MEP)
-            2.3.1.8 Message Header
-            2.3.1.9 Message Receiver
-            2.3.1.10 Message Reliability
-            2.3.1.11 Message Sender
-            2.3.1.12 Message Sequence
-            2.3.1.13 Message Transport
-        2.3.2 The Service Oriented Model
-            2.3.2.1 Action
-            2.3.2.2 Agent
-            2.3.2.3 Choreography
-            2.3.2.4 Capability
-            2.3.2.5 Goal State
-            2.3.2.6 Provider Agent
-            2.3.2.7 Provider Entity
-            2.3.2.8 Requester Agent
-            2.3.2.9 Requester Entity
-            2.3.2.10 Service
-            2.3.2.11 Service Description
-            2.3.2.12 Service Interface
-            2.3.2.13 Service Intermediary
-            2.3.2.14 Service Role
-            2.3.2.15 Service Semantics
-            2.3.2.16 Service Task
-        2.3.3 The Resource Oriented Model
-            2.3.3.1 Discovery
-            2.3.3.2 Discovery Service
-            2.3.3.3 Identifier
-            2.3.3.4 Representation
-            2.3.3.5 Resource
-            2.3.3.6 Resource description
-        2.3.4 The Policy Model
-            2.3.4.1 Audit Guard
-            2.3.4.2 Domain
-            2.3.4.3 Obligation
-            2.3.4.4 Permission
-            2.3.4.5 Permission Guard
-            2.3.4.6 Person or Organization
-            2.3.4.7 Policy
-            2.3.4.8 Policy Description
-            2.3.4.9 Policy Guard
-    2.4 Relationships
-        2.4.1 The is a relationship
-            2.4.1.1 Definition
-            2.4.1.2 Relationships to other elements
-            2.4.1.3 Explanation
-        2.4.2 The describes relationship
-            2.4.2.1 Definition
-            2.4.2.2 Relationships to other elements
-            2.4.2.3 Explanation
-        2.4.3 The has a relationship
-            2.4.3.1 Definition
-            2.4.3.2 Relationships to other elements
-            2.4.3.3 Explanation
-        2.4.4 The owns relationship
-            2.4.4.1 Definition
-            2.4.4.2 Relationships to other elements
-            2.4.4.3 Explanation
-        2.4.5 The realized relationship
-            2.4.5.1 Definition
-            2.4.5.2 Relationships to other elements
-            2.4.5.3 Explanation
+2.1 Introduction
+2.2 How to read this section
+2.2.1 Concepts
+2.2.2 Relationships
+2.2.3 Concept Maps
+2.2.4 Model
+2.2.5 Conformance
+2.3 The Architectural Models
+2.3.1 Message Oriented Model
+2.3.1.1 Address
+2.3.1.2 Delivery Policy
+2.3.1.3 Message
+2.3.1.4 Message Body
+2.3.1.5 Message Correlation
+2.3.1.6 Message Envelope
+2.3.1.7 Message Exchange Pattern (MEP)
+2.3.1.8 Message Header
+2.3.1.9 Message Receiver
+2.3.1.10 Message Reliability
+2.3.1.11 Message Sender
+2.3.1.12 Message Sequence
+2.3.1.13 Message Transport
+2.3.2 The Service Oriented Model
+2.3.2.1 Action
+2.3.2.2 Agent
+2.3.2.3 Choreography
+2.3.2.4 Capability
+2.3.2.5 Goal State
+2.3.2.6 Provider Agent
+2.3.2.7 Provider Entity
+2.3.2.8 Requester Agent
+2.3.2.9 Requester Entity
+2.3.2.10 Service
+2.3.2.11 Service Description
+2.3.2.12 Service Interface
+2.3.2.13 Service Intermediary
+2.3.2.14 Service Role
+2.3.2.15 Service Semantics
+2.3.2.16 Service Task
+2.3.3 The Resource Oriented Model
+2.3.3.1 Discovery
+2.3.3.2 Discovery Service
+2.3.3.3 Identifier
+2.3.3.4 Representation
+2.3.3.5 Resource
+2.3.3.6 Resource description
+2.3.4 The Policy Model
+2.3.4.1 Audit Guard
+2.3.4.2 Domain
+2.3.4.3 Obligation
+2.3.4.4 Permission
+2.3.4.5 Permission Guard
+2.3.4.6 Person or Organization
+2.3.4.7 Policy
+2.3.4.8 Policy Description
+2.3.4.9 Policy Guard
+2.4 Relationships
+2.4.1 The is a relationship
+2.4.1.1 Definition
+2.4.1.2 Relationships to other elements
+2.4.1.3 Explanation
+2.4.2 The describes relationship
+2.4.2.1 Definition
+2.4.2.2 Relationships to other elements
+2.4.2.3 Explanation
+2.4.3 The has a relationship
+2.4.3.1 Definition
+2.4.3.2 Relationships to other elements
+2.4.3.3 Explanation
+2.4.4 The owns relationship
+2.4.4.1 Definition
+2.4.4.2 Relationships to other elements
+2.4.4.3 Explanation
+2.4.5 The realized relationship
+2.4.5.1 Definition
+2.4.5.2 Relationships to other elements
+2.4.5.3 Explanation
 3 Stakeholder's Perspectives
-    3.1 Service Oriented Architecture
-        3.1.1 Distributed Systems
-        3.1.2 Web Services and Architectural Styles
-        3.1.3 Relationship to the World Wide Web and REST Architectures
-    3.2 Web Services Technologies
-        3.2.1 XML
-        3.2.2 SOAP
-        3.2.3 WSDL
-    3.3 Using Web Services
-    3.4 Web Service Discovery
-        3.4.1 Manual Versus Autonomous Discovery
-        3.4.2 Discovery: Registry, Index or Peer-to-Peer?
-            3.4.2.1 The Registry Approach
-            3.4.2.2 The Index Approach
-            3.4.2.3 Peer-to-Peer (P2P) Discovery
-            3.4.2.4 Discovery Service Trade-Offs
-        3.4.3 Federated Discovery Services
-        3.4.4 Functional Descriptions and Discovery
-    3.5 Web Service Semantics
-        3.5.1 Message semantics and visibility
-        3.5.2 Semantics of the Architectural Models
-        3.5.3 The Role of Metadata
-    3.6 Web Services Security
-        3.6.1 Security policies
-        3.6.2 Message Level Security Threats
-            3.6.2.1 Message Alteration
-            3.6.2.2 Confidentiality
-            3.6.2.3 Man-in-the-middle
-            3.6.2.4 Spoofing
-            3.6.2.5 Denial of Service
-            3.6.2.6 Replay Attacks
-        3.6.3 Web Services Security Requirements
-            3.6.3.1 Authentication Mechanisms
-            3.6.3.2 Authorization
-            3.6.3.3 Data Integrity and Data Confidentiality
-            3.6.3.4 Integrity of Transactions and Communications
-            3.6.3.5 Non-Repudiation
-            3.6.3.6 End-to-End Integrity and Confidentiality of Messages
-            3.6.3.7 Audit Trails
-            3.6.3.8 Distributed Enforcement of Security Policies
-        3.6.4 Security Consideration of This Architecture
-            3.6.4.1 Cross-Domain Identities
-            3.6.4.2 Distributed Policies
-            3.6.4.3 Trust Policies
-            3.6.4.4 Secure Discovery Mechanism
-            3.6.4.5 Trust and Discovery
-            3.6.4.6 Secure Messaging
-        3.6.5 Privacy Considerations
-    3.7 Peer-to-Peer Interaction
-    3.8 Web Services Reliability
-        3.8.1 Message reliability
-        3.8.2 Service reliability
-        3.8.3 Reliability and management
-    3.9 Web Service Management
-    3.10 Web Services and EDI: Transaction Tracking
-        3.10.1 When Something Goes Wrong
-        3.10.2 The Need for Tracking
-        3.10.3 Examples of Tracking
-        3.10.4 Requirements for Effective Tracking
-        3.10.5 Tracking and URIs
+3.1 Service Oriented Architecture
+3.1.1 Distributed Systems
+3.1.2 Web Services and Architectural Styles
+3.1.3 Relationship to the World Wide Web and REST Architectures
+3.2 Web Services Technologies
+3.2.1 XML
+3.2.2 SOAP
+3.2.3 WSDL
+3.3 Using Web Services
+3.4 Web Service Discovery
+3.4.1 Manual Versus Autonomous Discovery
+3.4.2 Discovery: Registry, Index or Peer-to-Peer?
+3.4.2.1 The Registry Approach
+3.4.2.2 The Index Approach
+3.4.2.3 Peer-to-Peer (P2P) Discovery
+3.4.2.4 Discovery Service Trade-Offs
+3.4.3 Federated Discovery Services
+3.4.4 Functional Descriptions and Discovery
+3.5 Web Service Semantics
+3.5.1 Message semantics and visibility
+3.5.2 Semantics of the Architectural Models
+3.5.3 The Role of Metadata
+3.6 Web Services Security
+3.6.1 Security policies
+3.6.2 Message Level Security Threats
+3.6.2.1 Message Alteration
+3.6.2.2 Confidentiality
+3.6.2.3 Man-in-the-middle
+3.6.2.4 Spoofing
+3.6.2.5 Denial of Service
+3.6.2.6 Replay Attacks
+3.6.3 Web Services Security Requirements
+3.6.3.1 Authentication Mechanisms
+3.6.3.2 Authorization
+3.6.3.3 Data Integrity and Data Confidentiality
+3.6.3.4 Integrity of Transactions and Communications
+3.6.3.5 Non-Repudiation
+3.6.3.6 End-to-End Integrity and Confidentiality of Messages
+3.6.3.7 Audit Trails
+3.6.3.8 Distributed Enforcement of Security Policies
+3.6.4 Security Consideration of This Architecture
+3.6.4.1 Cross-Domain Identities
+3.6.4.2 Distributed Policies
+3.6.4.3 Trust Policies
+3.6.4.4 Secure Discovery Mechanism
+3.6.4.5 Trust and Discovery
+3.6.4.6 Secure Messaging
+3.6.5 Privacy Considerations
+3.7 Peer-to-Peer Interaction
+3.8 Web Services Reliability
+3.8.1 Message reliability
+3.8.2 Service reliability
+3.8.3 Reliability and management
+3.9 Web Service Management
+3.10 Web Services and EDI: Transaction Tracking
+3.10.1 When Something Goes Wrong
+3.10.2 The Need for Tracking
+3.10.3 Examples of Tracking
+3.10.4 Requirements for Effective Tracking
+3.10.5 Tracking and URIs
 4 Conclusions
-    4.1 Requirements Analysis
-    4.2 Value of This Work
-    4.3 Significant Unresolved Issues
+4.1 Requirements Analysis
+4.2 Value of This Work
+4.3 Significant Unresolved Issues
 
 
 
@@ -229,12 +229,12 @@ Appendices
 
 A Overview of Web Services Specifications (Non-Normative)
 B An Overview of Web Services Security Technologies (Non-Normative)
-    B.1 XML-Signature and XML-Encryption
-    B.2 Web Services Security
-    B.3 XML Key Management Specification (XKMS) 2.0
-    B.4 Security Assertion Markup Language (SAML)
-    B.5 XACML: Communicating Policy Information
-    B.6 Identity Federation
+B.1 XML-Signature and XML-Encryption
+B.2 Web Services Security
+B.3 XML Key Management Specification (XKMS) 2.0
+B.4 Security Assertion Markup Language (SAML)
+B.5 XACML: Communicating Policy Information
+B.6 Identity Federation
 C References (Non-Normative)
 D Acknowledgments (Non-Normative)
 
@@ -440,7 +440,7 @@ Classes as are found in Object Oriented Programming languages) that we expect to
 realizations, but the message concept tells us what to look for in a given concrete system rather than prescribing its precise form.
 
 Not all concepts will have a realization in terms of data objects or structures occurring in computers or communications devices; for example the person or organization refers to people and human
-organizations. Other concepts are more abstract still; for example, message reliability denotes a property of the message transport service — a property that cannot be touched but nonetheless is
+organizations. Other concepts are more abstract still; for example, message reliability denotes a property of the message transport service ? a property that cannot be touched but nonetheless is
 important to Web services.
 
 Each concept is presented in a regular, stylized way consisting of a short definition, an enumeration of the relationships with other concepts, and a slightly longer explanatory description. For
@@ -542,7 +542,7 @@ Figure 2-2. Meta Model of the Architecture
 
 The four models are:
 
-* The Message Oriented Model focuses on messages, message structure, message transport and so on — without particular reference as to the reasons for the messages, nor to their significance.
+* The Message Oriented Model focuses on messages, message structure, message transport and so on ? without particular reference as to the reasons for the messages, nor to their significance.
 
 
 
@@ -567,7 +567,7 @@ The four models are:
   Services are mediated by means of the messages exchanged between requester agents and provider agents.
 
   A very important aspect of services is their relationship to the real world: services are mostly deployed to offer functionality in the real world. We model this by elaborating on the concept of a
-  service's owner — which, whether it is a person or an organization, has a real world responsibility for the service.
+  service's owner ? which, whether it is a person or an organization, has a real world responsibility for the service.
 
   Finally, the Service Oriented Model makes use of meta-data, which, as described in 3.1 Service Oriented Architecture, is a key property of Service Oriented Architectures. This meta-data is used to
   document many aspects of services: from the details of the interface and transport binding to the semantics of the service and what policy restrictions there may be on the service. Providing rich
@@ -708,7 +708,7 @@ Delivery policies are those policies that relate to the delivery of messages.
 Typically, a delivery policy applies to the combination of a particular message and a particular message transport mechanism. The policies that apply, however, may originate from descriptions in the
 message itself, or be intrinsic to the transport mechanism, or both.
 
-Examples of delivery policies include quality of service assurances — such as reliable versus best effort message delivery — and security assurances — such as encrypted versus unencrypted message
+Examples of delivery policies include quality of service assurances ? such as reliable versus best effort message delivery ? and security assurances ? such as encrypted versus unencrypted message
 transport. Another kind of delivery policy could take the form of assertions about recording an audit of how the message was delivered.
 
 
@@ -1054,7 +1054,7 @@ a message header may be
 
         a specific well known types
 
-        Editorial note  
+        Editorial note ?
         The "is-a" relationship here is used in a different way than elsewhere in the document.
 
 a message header may identify
@@ -1071,7 +1071,7 @@ a message header may be processed
 2.3.1.8.3 Explanation
 
 
-Message headers represent information about messages that is independently standardized (such as WS-Security) — and may have separate semantics -- from the message body. For example, there may be
+Message headers represent information about messages that is independently standardized (such as WS-Security) ? and may have separate semantics -- from the message body. For example, there may be
 standard forms of message header that describe authentication of messages. The form of such headers is defined for all messages; although, of course, a given authentication header will be specific
 to the particular message.
 
@@ -1410,7 +1410,7 @@ An agent may request
 
 
 Agents are programs that engage in actions on behalf of someone or something else. For our purposes, agents realize and request Web services. In effect, software agents are the running programs that
-drive Web services — both to implement them and to access them.
+drive Web services ? both to implement them and to access them.
 
 Software agents are also proxies for the entities that own them. This is important as many services involve the use of resources which also have owners with a definite interest in their disposition.
 For example, services may involve the transfer of money and the incurring of legal obligations as a result.
@@ -1431,7 +1431,7 @@ We specifically avoid any attempt to govern the implementation of agents; we are
 
 A choreography defines the sequence and conditions under which multiple cooperating independent agents exchange messages in order to perform a task to achieve a goal state.
 
-Editorial note  
+Editorial note ?
 This is a different level of abstraction from the definition used by the W3C Web Services Choreography Working Group.
 
 
@@ -1568,7 +1568,7 @@ a goal state may be characterized
 
 
 Goal states are associated with tasks. Tasks are the unit of action associated with services that have a measurable meaning. Typically measured from the perspective of the owner of a service, a goal
-state is characterized by a predicate that is true of that state — for example, a book selling service may have as its goal state that a book has been purchased by a legitimate customer.
+state is characterized by a predicate that is true of that state ? for example, a book selling service may have as its goal state that a book has been purchased by a legitimate customer.
 
 It is difficult to be formal about vague properties such as desireable, however, it is also clear that services are deployed and used with an intention. An e-commerce service is oriented towards
 buying and selling, a stock ticker service is oriented towards giving timely information. A goal state is simply a way of being able to declare success when a task has completed sucessfully.
@@ -1585,7 +1585,7 @@ buying and selling, a stock ticker service is oriented towards giving timely inf
 2.3.2.6.1 Definition
 
 
-A provider agent is an agent that is capable of and empowered to perform the actions associated with a service on behalf of its owner — the provider entity.
+A provider agent is an agent that is capable of and empowered to perform the actions associated with a service on behalf of its owner ? the provider entity.
 
 
 
@@ -1615,7 +1615,7 @@ a provider agent acts on behalf of
 2.3.2.6.3 Explanation
 
 
-The provider agent is the software agent that realizes a Web service by performing tasks on behalf of its owner — the provider entity.
+The provider agent is the software agent that realizes a Web service by performing tasks on behalf of its owner ? the provider entity.
 
 A given service may be offered by more than one agent, especially in the case of composite services, and a given provider agent may realize more than one Web service.
 
@@ -1671,7 +1671,7 @@ The provider entity is the person or organization that is offering a Web service
 2.3.2.8.1 Definition
 
 
-A requester agent is a software agent that wishes to interact with a provider agent in order to request that a task be performed on behalf of its owner — the requester entity.
+A requester agent is a software agent that wishes to interact with a provider agent in order to request that a task be performed on behalf of its owner ? the requester entity.
 
 
 
@@ -1697,7 +1697,7 @@ a requester agent acts on behalf of
 2.3.2.8.3 Explanation
 
 
-The requester agent is the software agent that requires a certain function to be performed on behalf of its owner — the requester entity. From an architectural perspective, this is the agent that is
+The requester agent is the software agent that requires a certain function to be performed on behalf of its owner ? the requester entity. From an architectural perspective, this is the agent that is
 looking for and invoking or initiating an interaction with a provider agent.
 
 
@@ -1816,7 +1816,7 @@ a service is used by
 
 
 A service is an abstract resource that represents a person or organization in some collection of related tasks as having specific service roles. The service may be realized by one or more provider
-agents that act on behalf of the person or organization — the provider entity.
+agents that act on behalf of the person or organization ? the provider entity.
 
 The critical distinction of a Web service, compared to other Web resources, is that Web services do not necessarily have a representation; however, they are associated with actions.
 
@@ -2030,7 +2030,7 @@ A service role is an intermediate abstraction between service and task. A given 
 messages emitted may also involve more than one service role.
 
 We can formalize the distinction by noting that a service role is typically associated with a particular property of messages. For ultimate processing, the service role may be to determine some
-final disposition of messages received. However, other service roles may be associated with more generic properties of messages — such as their encryption, or whether they reference a customer or
+final disposition of messages received. However, other service roles may be associated with more generic properties of messages ? such as their encryption, or whether they reference a customer or
 inventory item.
 
 Service roles identify the points of interest that a service owner has in the processing of messages. As such, they are established by the party that offers in the service.
@@ -2138,7 +2138,7 @@ a service task has a
 
 A service task is an abstraction that encapsulates some intended effect of invoking a service.
 
-Tasks are associated with goal states — characterized by predicates that are satisfied on successful completion.
+Tasks are associated with goal states ? characterized by predicates that are satisfied on successful completion.
 
 The performance of a task is made observable by the exchange of messages between the requester agent and the provider agent. The specific pattern of messages is what defines the choreography
 associated with the task.
@@ -2148,7 +2148,7 @@ completion message, which are public, and the actual database update, which is t
 
 In the case of a service oriented architecture only the public aspects of a task are important, and these are expressed entirely in terms of the messages exchanged.
 
-Tasks represent a useful unit in modeling the semantics of a service and indeed of a service role — a given service may consist of a number of tasks.
+Tasks represent a useful unit in modeling the semantics of a service and indeed of a service role ? a given service may consist of a number of tasks.
 
 
 
@@ -2214,7 +2214,7 @@ Discovery may be realized
 
 
 In the context of Web services, the resources being discovered are usually service descriptions. If a requester entity does not already know what service it wishes to engage, the requester entity
-must discover one. There are various means by which discovery can be performed. Various things — human end users or agents — may initiate discovery. Requester entities may find service descriptions
+must discover one. There are various means by which discovery can be performed. Various things ? human end users or agents ? may initiate discovery. Requester entities may find service descriptions
 during development for static binding, or during execution for dynamic binding. For statically bound requester agents, using discovery is optional, as the service description might be obtained in
 other ways, such as being sent directly from the provider entity to the requester entity, developed collaboratively, or provided by a third party, such as a standards body.
 
@@ -3092,7 +3092,7 @@ reified
 When we say that the concept or feature X is realized as Y, we mean that Y is an implementation or reification of the concept X. I.e., if Y is a valid concept of a system then we have also ensured
 that the concept X is valid of the same system.
 
-For example, in the correlation feature, we state that message correlation requires that we associate identifiers with messages. This can be realized in a number of ways — including the identifier
+For example, in the correlation feature, we state that message correlation requires that we associate identifiers with messages. This can be realized in a number of ways ? including the identifier
 in the message header, message body, in a service binding and so on. The message identifier is a key to the realization of message correlation.
 
 
@@ -3494,7 +3494,7 @@ case of an index:
 
 * An index could include third-party information.
 
-* Different indexes could provide different kinds of information — some richer, some sparser.
+* Different indexes could provide different kinds of information ? some richer, some sparser.
 
 * Free-market forces determine which index people will use to discover the information that they seek.
 
@@ -3597,11 +3597,11 @@ For computer programs to successfully interact with each other a number of condi
 2. There must be agreement (in the sense discussed in 3.3 Using Web Services) on the form of the data such as whether the data is lines of text, XML structures, etc.
 
 3. The two (or more) programs must share agreement (in the sense discussed in 3.3 Using Web Services) as to the intended meaning of the data. For example, whether the data is intended to
-   represent an HTML page to be rendered, or whether the data represents the current status of a bank account; the expectations and the processing involved in processing the data is different — even
+   represent an HTML page to be rendered, or whether the data represents the current status of a bank account; the expectations and the processing involved in processing the data is different ? even
    if the form of the data is identical.
 
 4. There must be agreement (in the sense discussed in 3.3 Using Web Services) as to the implied processing of messages exchanged between the programs. For example, purchase ordering Web service
-   is expected — by the agent that places the order — to process the document containing the purchase order as a purchase order, as opposed to simply recording it for auditing purposes.
+   is expected ? by the agent that places the order ? to process the document containing the purchase order as a purchase order, as opposed to simply recording it for auditing purposes.
 
 
 As we shall see below, more may be required, but for now this list is sufficient.
@@ -3951,10 +3951,10 @@ be validated at run time in the context of interaction. Each party in an interac
 
 
 Trust Policies are distributed policies that apply to the environment of the other side's party in an interaction. A requester entity needs to trust the environment of a service and the provider
-entity needs to trust the environment of the requester entity. Trust policies may be recursive — they may be defined against trust policies of involved parties and even whole domains. An example of
+entity needs to trust the environment of the requester entity. Trust policies may be recursive ? they may be defined against trust policies of involved parties and even whole domains. An example of
 this is: "I will trust you if you trust my friend and my friend trusts you."
 
-Distributed Identities, Policies and Trust can be described and processed by a machine. For example, an X.509 certificate can be embedded in an message, thus asserting the sender’s Identity. A
+Distributed Identities, Policies and Trust can be described and processed by a machine. For example, an X.509 certificate can be embedded in an message, thus asserting the sender?s Identity. A
 Policy can be described in XML and attached to the service contract. Machines could process, resolve and adjust security based on the given descriptions.
 
 Trust mechanisms can be used to form Delegation and Federation relationships. These mechanisms can be used to facilitate secure interactions between web services across trust boundaries in a
@@ -3980,7 +3980,7 @@ anonymous.
 Suppose a requester entity discovers a Web service being offered by a provider entity that was previously unknown to that requester entity. Should the requester entity trust that service? If the use
 of that service requires the requester to divulge sensitive information (such as credit card numbers) to the service then there may be significant risk involved.
 
-This decision — whether or not to trust a particular service — inherently arises when a requester entity chooses a Web service from a previously unknown provider entity. This has ramification in the
+This decision ? whether or not to trust a particular service ? inherently arises when a requester entity chooses a Web service from a previously unknown provider entity. This has ramification in the
 discovery process, and leads to an important difference between manual discovery and autonomous discovery.
 
 When manual discovery is used, a human makes the judgement (perhaps using other, independently obtained information) of whether to trust and engage a previously unknown service that is discovered.
@@ -4027,7 +4027,7 @@ Resolution:
 None recorded.
 
 
-Privacy as related to behavior, habits and actions are expressed in terms of policies that the owners of data — typically the users of Web services — have, together with mechanisms necessary to
+Privacy as related to behavior, habits and actions are expressed in terms of policies that the owners of data ? typically the users of Web services ? have, together with mechanisms necessary to
 ensure that the owners' rights are respected.
 
 Privacy policies are typically much more of the obligatory form than access control policies. A policy that requires a provider agent to properly propagate P3P tags, for example, represents an
@@ -4050,7 +4050,7 @@ To support Web services interacting in a peer to peer style, the architecture mu
 descriptions of the capabilities of peers and must support flexibility in the discovery of peers by each other.
 
 In the message exchange pattern concept we allow for Web services to communicate with each other using a very general concept of message exchange. Furthermore, we allow for the fact that a message
-exchange pattern can itself be identified — this permits interacting Web service agents to explicitly reference a particular message pattern in their interactions.
+exchange pattern can itself be identified ? this permits interacting Web service agents to explicitly reference a particular message pattern in their interactions.
 
 A Web service wishing to use a peer-to-peer style interaction may use, for example, a publish-subscribe form of message exchange pattern. This kind of message exchange is just one of the possible
 message exchange patterns possible when the pattern is explicitly identifiable.
@@ -4164,8 +4164,8 @@ Again, as with transactional monitoring, one approach would be to deploy special
 message structure) requirements of service usage are being met. This is especially important when the provider agent of a service is not in the same ownership domain as the requester agent.
 
 The key architectural property being used here is the potential deployment of third party services that monitor and process messages in specific role-oriented ways that neither the requesters of
-services nor the providers of serives needs to be unduly concerned with. This is possible because the architecture does not require messages to be consumed by single agents — nor conversely to be
-produced by single agents — but allows multiple agents to collaborate in the processing of a given message. Each service role establishes a specific functionality, often encoded in specific headers
+services nor the providers of serives needs to be unduly concerned with. This is possible because the architecture does not require messages to be consumed by single agents ? nor conversely to be
+produced by single agents ? but allows multiple agents to collaborate in the processing of a given message. Each service role establishes a specific functionality, often encoded in specific headers
 of the messages.
 
 
@@ -4314,7 +4314,7 @@ Furthermore, a URI may be dereferenceable: If the URI also represents the locati
 history of that transaction, provided the user is authorized to access such information. (Security mechanisms will need to ensure that a tracking URI cannot be dereferenced without proper authority
 and privacy controls, but the use of URIs is largely orthogonal to this requirement.)
 
-The potential value of this dual use of URIs — both as globally unambiguous identifiers and as universally dereferenceable links — is one of the most fundamental and important insights in the
+The potential value of this dual use of URIs ? both as globally unambiguous identifiers and as universally dereferenceable links ? is one of the most fundamental and important insights in the
 architecture of the Web. Because the Web services architecture builds on the Web architecture, Web services can leverage the benefits of clarity, simplicity, universality and convenience that this
 use of URI offers.
 

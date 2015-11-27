@@ -148,6 +148,6 @@ public class SearchController
         {
             sb.append(keyword).append(" ");
         }
-        return sb.toString();
+        return sb.toString().trim();
     }
 }
