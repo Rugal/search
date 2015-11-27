@@ -10,40 +10,42 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="icon" href="/page/assets/img/favicon.ico">
-
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="/page/assets/css/style.css">
     </head>
     <body ng-controller="SearchController as searchCtrl">
         <div class="container">
-            <!-- Example row of columns -->
-            <div class="row">
-                <div class="col-md-4">
-                    <h2>JPT first released</h2>
-                    <p>{{searchCtrl.responsebody.data.user.username}}</p>
-                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <div class="text-center">
+                <img id="logo" src="/page/assets/img/logo.gif" alt="Rugal"/>
+            </div>
+            <div id="search-box" class="form-group text-center">
+                <input id="input-box" type="text" ng-trim="true" placeholder="Have a try" ng-model="keywords" class="form-control" ng-keypress="pressEnter($event)" required/>
+                <button id="search-button" class="btn btn-info" ng-click="send(true)">Search</button>
+            </div>
+            <div>
+                <div  class="text-center">
+                    {{searchCtrl.responsebody.message}}
                 </div>
-                <div class="col-md-4">
-                    <h2>Travis passed</h2>
-                    <p>{{searchCtrl.responsebody.data.user.password}}</p>
-                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                </div>
-                <div class="col-md-4">
-                    <h2>Last one</h2>
-                    <p>{{searchCtrl.responsebody.data.user.email}}</p>
-                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                </div>
+                <ul class="animate-container">
+                    <li class="animate-repeat" ng-repeat="document in searchCtrl.responsebody.data">
+                        <h3>{{document.path}}</h3>
+                        <div ng-bind-html="document.fragment"></div>
+                    </li>
+                    <li class="animate-repeat" ng-if="results.length === 0">
+                        <strong>No results found...</strong>
+                    </li>
+                </ul>
             </div>
             <hr>
-
             <footer>
-
                 <p>&copy; Rugal Bernstein 2015</p>
             </footer>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-sanitize.js"></script>
         <script src="/page/assets/js/app.js"></script>
     </body>
 </html>
