@@ -38,13 +38,14 @@ public class SpellCheckServiceImplTest extends DBTestBase
         System.out.println("checkAll");
         String[] words = new String[]
         {
-            "servace", "impliment", "string"
+            "servace", "impliment", "string", "applicatioe"
         };
         String[] expResult = new String[]
         {
-            "service", "implement", "string"
+            "service", "implement", "string", "application"
         };
         String[] result = spellCheckService.checkAll(words);
+        System.out.println("-" + result[3] + "-");
         Assert.assertArrayEquals(expResult, result);
     }
 
