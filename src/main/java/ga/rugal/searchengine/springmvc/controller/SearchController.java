@@ -135,6 +135,47 @@ public class SearchController
     }
 
     /**
+     * Try to check spelling.
+     *
+     * @param queryString a list of key word.
+     *
+     * @return A Message object that contains checked words, or null if no check needed.
+     *
+     * @throws ParseException
+     * @throws IOException
+     * @throws InvalidTokenOffsetsException
+     */
+    @RequestMapping(value = "/spell",
+                    method = RequestMethod.GET,
+                    params =
+                    {
+                        "q"
+                    }
+    )
+    @ResponseBody
+    public Message spellCheck(@RequestParam(value = "q",
+                                            defaultValue = "",
+                                            required = true) String queryString)
+        throws ParseException, IOException, InvalidTokenOffsetsException
+    {
+        if (queryString.isEmpty())
+        {
+            LOG.debug(CommonLogContent.EMPTY_QUERY);
+            return Message.failMessage(CommonMessageContent.EMPTY_QUERY);
+        }
+        String[] oldKeywords = queryString.split("\\s+");
+        String[] newKeywords = spellCheckService.checkAll(oldKeywords);
+        String messageText = CommonMessageContent.NO_CORRECTION_NEED;
+        if (null != newKeywords)
+        {
+            String printString = this.catString(newKeywords);
+            messageText = String.format(CommonMessageContent.CORRECTED_WITH, printString);
+        }
+        return Message.successMessage(messageText, newKeywords);
+
+    }
+
+    /**
      * Simply concatenate string array into a string.
      *
      * @param keywords

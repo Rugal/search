@@ -15,4 +15,6 @@ public interface CommonMessageContent
 
     final String NOTHING_MATCHED = "No content matched";
 
+    final String NO_CORRECTION_NEED = "No correction needed";
+
 }
