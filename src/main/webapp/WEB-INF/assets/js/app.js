@@ -1,4 +1,8 @@
-var SearchApp = angular.module('SearchApp', ['ngSanitize']);
+function stringStartsWith(string, prefix) {
+    return string.slice(0, prefix.length) === prefix;
+}
+
+var SearchApp = angular.module('SearchApp', ['ngSanitize', 'ngAnimate']);
 SearchApp.config(['$httpProvider', function ($httpProvider) {
         $httpProvider.defaults.headers.common['Accept'] = 'application/json';
         $httpProvider.defaults.headers.common['Content-Type'] = 'application/json';
@@ -11,21 +15,23 @@ var SearchController = SearchApp.controller('SearchController', ['$http', '$scop
     function ($http, $scope, $sce)
     {
         var rest = this;
-        var origin = null;
+        $scope.show = false;
         rest.responsebody = [];
         $scope.send = function (force)
         {
             var query = $scope.keywords;
             if (query)
             {
-                origin = query;
                 console.log(query);
                 $http({method: 'GET', url: 'http://localhost:8080?q=' + query + '&c=' + force})
                         .then(
                                 function (response)
                                 {
-                                    console.log(response.data);
                                     rest.responsebody = response.data;
+                                    if (stringStartsWith(response.data.message, 'Correct with'))
+                                    {
+                                        $scope.show = true;
+                                    }
                                 },
                                 function (response)
                                 {
@@ -35,7 +41,8 @@ var SearchController = SearchApp.controller('SearchController', ['$http', '$scop
             }
         };
         $scope.pressEnter = function (keyEvent) {
+            $scope.show = false;
             if (keyEvent.which === 13)
-            $scope.send(true);
+                $scope.send(true);
         };
     }]);

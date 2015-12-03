@@ -37,18 +37,10 @@ public class SearchController
     private SpellCheckService spellCheckService;
 
     /**
-     * Search pages for given key words.
+     * Showing index page.
      *
-     * @param queryString a list of key word.
-     * @param correctable indicate if current query is correctable. true means keywords will be
-     *                    corrected by spell checker if spelling wrongly; otherwise, to force search
-     *                    the given keywords even they are incorrect in spelling.
+     * @return the page of index
      *
-     * @return A Message object that contains serialized content of query result.
-     *
-     * @throws ParseException
-     * @throws IOException
-     * @throws InvalidTokenOffsetsException
      */
     @RequestMapping(value = "/",
                     method = RequestMethod.GET
