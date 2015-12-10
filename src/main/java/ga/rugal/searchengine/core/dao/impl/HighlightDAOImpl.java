@@ -42,7 +42,8 @@ public class HighlightDAOImpl implements HighlightDAO
      * @throws org.apache.lucene.search.highlight.InvalidTokenOffsetsException
      */
     @Override
-    public String highlight(ScoreDoc docs, Highlighter highlighter) throws IOException, InvalidTokenOffsetsException
+    public String highlight(ScoreDoc docs, Highlighter highlighter) throws IOException,
+                                                                           InvalidTokenOffsetsException
     {
         //The document from searcher
         Document doc = searcher.doc(docs.doc);
@@ -52,7 +53,8 @@ public class HighlightDAOImpl implements HighlightDAO
         //the target content field
         String text = doc.get(SystemDefaultProperties.DEFAULT_CONTENT_NAME);
         //tokenize target content
-        TokenStream tokenStream = analyzer.tokenStream(SystemDefaultProperties.DEFAULT_CONTENT_NAME, text);
+        TokenStream tokenStream = analyzer.tokenStream(SystemDefaultProperties.DEFAULT_CONTENT_NAME,
+                                                       text);
         //Get the most relevant fragment in string format
         return highlighter.getBestFragment(tokenStream, text);
     }
