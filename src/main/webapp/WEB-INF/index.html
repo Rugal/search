@@ -20,7 +20,8 @@
                 <img id="logo" src="/page/assets/img/logo.gif" alt="Rugal"/>
             </div>
             <div id="search-box" class="form-group text-center">
-                <input id="input-box" type="text" ng-trim="true" placeholder="Have a try" ng-model="keywords" class="form-control" ng-keypress="pressEnter($event)" required/>
+                <img id="speech" alt="speech" ng-click="toggleSpeech()" src="/page/assets/img/mic.gif"/>
+                <input id="input_box" type="text" ng-trim="true" placeholder="Have a try" ng-model="keywords" class="form-control" ng-keypress="pressEnter($event)" required/>
                 <button id="search-button" class="btn btn-info" ng-click="send(true)">Search</button>
             </div>
             <div>
